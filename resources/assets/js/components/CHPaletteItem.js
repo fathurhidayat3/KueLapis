@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CHPaletteItem extends Component {
     constructor(props) {
@@ -9,16 +10,10 @@ class CHPaletteItem extends Component {
         return (
             <div className="col-md-2 ec-palette">
                 <span className="ec-palette-tool">
-                    <a data-toggle="modal" onClick={
-                        this.props.getdata.bind(this,
-                            this.props.code1,
-                            this.props.code2,
-                            this.props.code3,
-                            this.props.code4, )
-                    }>
+                    <Link to={"/palette/" + this.props.id}
+                        onClick={() => alert('yey')}>
                         <i className="fa fa-eye"></i>
-                        {/* href='#modal-palette' */}
-                    </a>
+                    </Link>
                 </span>
 
                 <div className="col-md-3 ec-palette-item" style={{ background: this.props.code1 }}></div>
@@ -31,10 +26,3 @@ class CHPaletteItem extends Component {
 }
 
 export default CHPaletteItem;
-
-// how to pass data to modal
-// from clicked palette ?
-
-// try to send using conventional way
-// send to props parent
-// until reach ContentPalette and pass variable to CHModalPalette props

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import CHPanel from '../components/CHPanel';
-import CHColor from '../components/CHColor';
 import LoadingSpinner from '../components/LoadingSpinner';
+import CHColorItem from '../components/CHColorItem';
 
 class ContentColor extends Component {
     constructor(props) {
@@ -31,16 +31,18 @@ class ContentColor extends Component {
     }
 
     render() {
-        const { data, loading } = this.state;
+        const { loading, color } = this.state;
 
         return (
-            <div>
-                <CHPanel title="All Colors" linkto="">
-                    {loading ? <LoadingSpinner /> :
-                        <CHColor color={this.state.color} />
-                    }
-                </CHPanel>
-            </div>
+            <CHPanel title="All Colors" linkto="">
+                {loading ? <LoadingSpinner /> :
+                    <div className="row text-center">
+                        {color.map(data =>
+                            <CHColorItem hex={data.hex} rgb={data.rgb} hsl={data.hsl} key={data.id} />
+                        )}
+                    </div>
+                }
+            </CHPanel>
         );
     }
 }

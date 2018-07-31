@@ -10,9 +10,9 @@ Route::get('/getpalettes', 'PaletteController@getpalettes');
 Route::get('/getgradients', 'GradientController@getgradients');
 
 Route::get('/getall', function() {
-    $color = Color::orderBy('id', 'DESC')->take(12)->get();
-    $palette = Palette::orderBy('id', 'DESC')->take(12)->get();
-    $gradient = Gradient::orderBy('id', 'DESC')->take(12)->get();
+    $color = Color::orderBy('id', 'ASC')->take(12)->get();
+    $palette = Palette::orderBy('id', 'ASC')->take(12)->get();
+    $gradient = Gradient::orderBy('id', 'ASC')->take(12)->get();
 
     return compact('color', 'palette', 'gradient');
 });

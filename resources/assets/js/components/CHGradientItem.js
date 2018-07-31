@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CHGradientItem extends Component {
     showPalette(param) {
@@ -12,8 +13,9 @@ class CHGradientItem extends Component {
                         + this.props.from + ', ' + this.props.to + ')'
                 }}>
                     <span className="ec-palette-tool">
-                        <a onClick={this.showPalette.bind(this, 'palette 1')}>
-                            <i className="fa fa-eye"></i></a>
+                        <Link to={"/gradient/" + this.props.id}>
+                            <i className="fa fa-eye"></i>
+                        </Link>
                     </span>
                 </div>
             </div>

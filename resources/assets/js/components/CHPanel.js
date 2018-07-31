@@ -10,9 +10,7 @@ class CHPanel extends Component {
                         <h3 className="panel-title">{this.props.title}
                             <span className="pull-right">
                                 {this.props.linkto !== "" ?
-                                    <Link to={this.props.linkto}>
-                                        See More
-                        </Link>
+                                    <Link to={this.props.linkto}>See More</Link>
                                     :
                                     <a data-toggle="modal" href='#modal-filter'><i className="fa fa-filter"></i></a>
                                 }

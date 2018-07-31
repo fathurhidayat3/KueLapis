@@ -1,45 +1,50 @@
 import React, { Component } from 'react';
 
 import CHPanel from '../components/CHPanel';
-import CHGradient from '../components/CHGradient';
 import LoadingSpinner from '../components/LoadingSpinner';
+import CHGradientItem from '../components/CHGradientItem';
 
 class ContentGradient extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
-            gradient : [],
-            loading : false
+            gradient: [],
+            loading: false
         }
     }
 
-    componentWillMount(){
-        this.setState({ 
+    componentWillMount() {
+        this.setState({
             loading: true
         });
         axios.get('http://localhost:8000/getgradients')
-        .then(response => {
-          this.setState({ 
-            gradient: response.data,
-            loading: false
-        });
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
+            .then(response => {
+                this.setState({
+                    gradient: response.data,
+                    loading: false
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     }
-    
+
     render() {
-        const {data, loading} = this.state;
+        const { loading, gradient } = this.state;
+        
         return (
-            <div>
             <CHPanel title="All Gradient" linkto="">
-                {loading ? <LoadingSpinner /> : 
-                    <CHGradient gradient={this.state.gradient}/>
+                {loading ? <LoadingSpinner /> :
+                    <div className="row text-center">
+                        {gradient.map(data =>
+                            <CHGradientItem
+                                from={data.from} to={data.to}
+                                key={data.id} id={data.id} />
+                        )}
+                    </div>
                 }
             </CHPanel>
-            </div>
         );
     }
 }
