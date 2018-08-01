@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 class CHPaletteItem extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            eye: false
+        }
     }
 
     render() {
         return (
-            <div className="col-md-2 palette__col">
-                <span className="eye_button">
+            <div className="col-md-2 palette__col" 
+            onMouseEnter={() => this.setState({eye: true})}
+            onMouseLeave={() => this.setState({eye: false})}>
+                <span className="eye_button" style={this.state.eye ? {display: 'block'} : {display: 'none'}}>
                     <Link to={"/palette/" + this.props.id}>
                         <i className="fa fa-eye"></i>
                     </Link>
