@@ -8,18 +8,17 @@ class CHPaletteItem extends Component {
 
     render() {
         return (
-            <div className="col-md-2 ec-palette">
-                <span className="ec-palette-tool">
-                    <Link to={"/palette/" + this.props.id}
-                        onClick={() => alert('yey')}>
+            <div className="col-md-2 palette__col">
+                <span className="eye_button">
+                    <Link to={"/palette/" + this.props.id}>
                         <i className="fa fa-eye"></i>
                     </Link>
                 </span>
 
-                <div className="col-md-3 ec-palette-item" style={{ background: this.props.code1 }}></div>
-                <div className="col-md-3 ec-palette-item" style={{ background: this.props.code2 }}></div>
-                <div className="col-md-3 ec-palette-item" style={{ background: this.props.code3 }}></div>
-                <div className="col-md-3 ec-palette-item" style={{ background: this.props.code4 }}></div>
+                <div className="col-md-3 palette__item" style={{ background: this.props.code1 }}></div>
+                <div className="col-md-3 palette__item" style={{ background: this.props.code2 }}></div>
+                <div className="col-md-3 palette__item" style={{ background: this.props.code3 }}></div>
+                <div className="col-md-3 palette__item" style={{ background: this.props.code4 }}></div>
             </div>
         );
     }

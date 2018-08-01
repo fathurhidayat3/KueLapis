@@ -8,11 +8,11 @@ class CHGradientItem extends Component {
     render() {
         return (
             <div>
-                <div className="col-md-2 ec-gradient" style={{
+                <div className="col-md-2 gradient" style={{
                     background: 'linear-gradient(to bottom,'
                         + this.props.from + ', ' + this.props.to + ')'
                 }}>
-                    <span className="ec-palette-tool">
+                    <span className="eye_button">
                         <Link to={"/gradient/" + this.props.id}>
                             <i className="fa fa-eye"></i>
                         </Link>

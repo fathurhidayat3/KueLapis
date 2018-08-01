@@ -17,7 +17,7 @@ class CHPanel extends Component {
                             </span>
                         </h3>
                     </div>
-                    <div className="panel-body nopaddingtopbottom">
+                    <div className="panel-body no_padding_vertical">
                         {this.props.children}
                     </div>
                 </div>

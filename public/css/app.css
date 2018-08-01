@@ -8356,8 +8356,15 @@ body {
 }
 
 code {
+  margin: 2px auto;
   color: #555;
   opacity: .8;
+}
+
+code:hover {
+  cursor: pointer;
+  background: #edb64f;
+  color: #9e6323;
 }
 
 a {
@@ -8375,27 +8382,12 @@ h3 {
   font-family: 'Pacifico', cursive;
 }
 
-.nopaddingtopbottom {
+.no_padding_vertical {
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-.ec-color {
-  color: white !important;
-  padding: 10px 0 !important;
-}
-
-.ec-palette {
-  color: white !important;
-  padding: 5px !important;
-  position: relative !important;
-}
-
-.ec-palette-item {
-  height: 6vw;
-}
-
-.ec-palette-tool {
+.eye_button {
   position: absolute;
   top: 39%;
   right: 44.5%;
@@ -8407,32 +8399,69 @@ h3 {
   color: #555;
 }
 
-.ec-gradient {
-  height: 87px !important;
-}
-
-.ec-tools {
-  margin-right: 20px !important;
-}
-
 .loading {
   margin: 10px;
 }
 
-.modal.fade .modal-dialog {
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
-  top: 25% !important;
-  opacity: 0;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+.panel__detail {
+  height: 75vh;
 }
 
-.modal.fade.in .modal-dialog {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transform: translate3d(0, -300px, 0);
-  transform: scale(1);
-  opacity: 1;
+.panel__palette {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8px;
+}
+
+.panel__gradient {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8px;
+}
+
+.color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4px;
+}
+
+.palette__col {
+  color: white !important;
+  padding: 5px !important;
+  position: relative !important;
+}
+
+.palette__item {
+  height: 6vw;
+}
+
+.gradient {
+  height: 87px !important;
 }
 

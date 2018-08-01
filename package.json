@@ -21,9 +21,11 @@
         "react-dom": "^15.4.2"
     },
     "dependencies": {
+        "clipboard": "^2.0.1",
         "react-redux": "^5.0.7",
         "react-router-dom": "^4.2.2",
         "react-transition-group": "^2.2.1",
-        "redux": "^4.0.0"
+        "redux": "^4.0.0",
+        "sweetalert": "^2.1.0"
     }
 }
