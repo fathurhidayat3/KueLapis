@@ -48,6 +48,11 @@ h3 {color: #555 !important;}
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 0 12px 0;
+    
+    @media screen and (max-width: $break-small) {
+        height: auto;
+        padding: 5px; 
+    }
 }
 .panel__gradient {
     height: 100%;
@@ -84,6 +89,8 @@ h3 {color: #555 !important;}
 .gradient__color--right {
     margin: 2px 0 2px auto !important;
 }
+
+
 
 // ----- Old Concept
 // .modal.fade .modal-dialog {

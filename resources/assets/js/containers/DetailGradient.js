@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import ColorCode from '../components/ColorCode';
@@ -10,12 +11,14 @@ class DetailGradient extends Component {
   }
 
   render() {
+    const selected = this.props.gradient.selected;
+
     return (
       <CHPanel title="Selected Gradient" linkto="">
         <div className="row panel__detail">
           <div className="col-md-12 panel__gradient" style={{
             background: 'linear-gradient(to right,'
-              + 'rgb(255, 82, 82)' + ', ' + 'rgb(179, 57, 57)' + ')'
+              + selected.from + ', ' + selected.to + ')'
           }}>
             <div className="col-md-2 gradient__item">
               <ColorCode customClass="gradient__color--left" colorType="#e17055" />
@@ -34,4 +37,14 @@ class DetailGradient extends Component {
   }
 }
 
-export default DetailGradient;
+const mapStateToProps = (state) => ({
+  gradient: state.GradientReducer
+})
+
+const mapDispatchToProps = (dispatch) => ({
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DetailGradient);

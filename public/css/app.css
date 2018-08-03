@@ -8423,6 +8423,13 @@ h3 {
   padding: 0 0 12px 0;
 }
 
+@media screen and (max-width: 320px) {
+  .panel__palette {
+    height: auto;
+    padding: 5px;
+  }
+}
+
 .panel__gradient {
   height: 100%;
   display: -webkit-box;
