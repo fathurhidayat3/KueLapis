@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import LoadingSpinner from '../components/LoadingSpinner';
 import CHGradientItem from '../components/CHGradientItem';
+
+import { panelStatus } from '../actions/AppAction';
 
 class ContentGradient extends Component {
     constructor(props) {
@@ -34,7 +37,7 @@ class ContentGradient extends Component {
         const { loading, gradient } = this.state;
         
         return (
-            <CHPanel title="All Gradient" linkto="">
+            <CHPanel title="All Gradient">
                 {loading ? <LoadingSpinner /> :
                     <div className="row text-center">
                         {gradient.map(data =>
@@ -49,4 +52,14 @@ class ContentGradient extends Component {
     }
 }
 
-export default ContentGradient;
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  panelStatus: dispatch(panelStatus(1))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContentGradient);

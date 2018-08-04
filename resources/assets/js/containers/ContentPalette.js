@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import LoadingSpinner from '../components/LoadingSpinner';
 import CHPaletteItem from '../components/CHPaletteItem';
+
+import { panelStatus } from '../actions/AppAction';
 
 class ContentPalette extends Component {
     constructor(props) {
@@ -34,7 +37,7 @@ class ContentPalette extends Component {
         const { loading, palette } = this.state;
 
         return (
-            <CHPanel title="All Palettes" linkto="">
+            <CHPanel title="All Palettes">
                 {loading ? <LoadingSpinner /> :
                     <div className="row text-center">
                         {palette.map(data =>
@@ -50,4 +53,14 @@ class ContentPalette extends Component {
     }
 }
 
-export default ContentPalette;
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  panelStatus: dispatch(panelStatus(1))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContentPalette);

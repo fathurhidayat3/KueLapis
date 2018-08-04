@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import LoadingSpinner from '../components/LoadingSpinner';
 import CHColorItem from '../components/CHColorItem';
+
+import { panelStatus } from '../actions/AppAction';
 
 class ContentColor extends Component {
     constructor(props) {
@@ -34,7 +37,7 @@ class ContentColor extends Component {
         const { loading, color } = this.state;
 
         return (
-            <CHPanel title="All Colors" linkto="">
+            <CHPanel title="All Colors">
                 {loading ? <LoadingSpinner /> :
                     <div className="row text-center">
                         {color.map(data =>
@@ -47,4 +50,14 @@ class ContentColor extends Component {
     }
 }
 
-export default ContentColor;
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  panelStatus: dispatch(panelStatus(1))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContentColor);

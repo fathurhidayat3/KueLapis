@@ -1,2 +1,4 @@
+export const PANEL_STATUS = 'PANEL_STATUS';
+
 export const DETAIL_PALETTE = 'DETAIL_PALETTE';
 export const DETAIL_GRADIENT = 'DETAIL_GRADIENT';

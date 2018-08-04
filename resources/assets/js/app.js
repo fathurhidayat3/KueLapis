@@ -24,25 +24,10 @@ clipboard.on('success', function (e) {
     e.clearSelection();
 });
 
-const initialState = {
-    PaletteReducer: {
-        data: [
-            { id: 1, code1: '#FF00FF', code2: '#F0F0F0', code3: '#F0FFF0', code4: '#FFF0FF' },
-            { id: 2, code1: '#FF00F0', code2: '#F0F0F0', code3: '#F0FFF0', code4: '#FFF0FF' }
-        ],
-        selected: { id: 1, code1: '#55efc4', code2: '#e17055', code3: '#b2bec3', code4: '#00b894' }
-    },
-    GradientReducer: {
-        data: [
-            { id: 1, from: '#00b894', to: '#e17055' },
-            { id: 2, from: '#b2bec3', to: '#55efc4' }
-        ],
-        selected: { id: 1, from: '#00b894', to: '#55efc4' }
-    }
-};
+const initialState = {};
 
 const store = createStore(
-    rootReducer, initialState,
+    rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import ColorCode from '../components/ColorCode';
 
+import { panelStatus } from '../actions/AppAction';
+
 class DetailGradient extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selected: {}
+    }
   }
 
+  componentWillMount() {
+    let id = this.props.location.pathname.split('/')[2];
+    axios.get('http://localhost:8000/getgradients/' + id)
+      .then(response => {
+        this.setState({
+          selected: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+  
   render() {
-    const selected = this.props.gradient.selected;
+    const selected = this.state.selected;
 
     return (
       <CHPanel title="Selected Gradient" linkto="">
@@ -38,10 +56,10 @@ class DetailGradient extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  gradient: state.GradientReducer
 })
 
 const mapDispatchToProps = (dispatch) => ({
+  panelStatus: dispatch(panelStatus(2))
 })
 
 export default connect(

@@ -15,7 +15,7 @@ class GradientController extends Controller
     public function index()
     {
         //
-        return view('welcome');
+        return Gradient::all();
     }
 
     public function getgradients()
@@ -51,9 +51,10 @@ class GradientController extends Controller
      * @param  \App\Gradient  $gradient
      * @return \Illuminate\Http\Response
      */
-    public function show(Gradient $gradient)
+    public function show(Gradient $getgradient)
     {
         //
+        return $getgradient;
     }
 
     /**

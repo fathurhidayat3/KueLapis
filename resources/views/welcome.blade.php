@@ -8,8 +8,6 @@
         <title>KueLapis</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('third-party/font-awesome/css/font-awesome.min.css')}}">
     </head>

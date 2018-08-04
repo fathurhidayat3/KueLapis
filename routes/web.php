@@ -6,8 +6,8 @@ use App\Gradient;
 
 Route::resource('/color', 'ColorController');
 Route::get('/getcolors', 'ColorController@getcolors');
-Route::get('/getpalettes', 'PaletteController@getpalettes');
-Route::get('/getgradients', 'GradientController@getgradients');
+Route::resource('/getpalettes', 'PaletteController');
+Route::resource('/getgradients', 'GradientController');
 
 Route::get('/getall', function() {
     $color = Color::orderBy('id', 'ASC')->take(12)->get();

@@ -27,8 +27,8 @@ class Navbar extends Component {
                             <a href="#" className="dropdown-toggle" data-toggle="dropdown">Additional Link
                             <b className="caret"></b></a>
                             <ul className="dropdown-menu">
-                                <li><a href="#">Contribute Yours</a></li>
-                                <li><a href="#">Github Repository</a></li>
+                                {/* <li><a href="#">Contribute Yours</a></li> */}
+                                <li><a href="https://github.com/fathurhidayat3/KueLapis" target="_blank">Github Repository</a></li>
                                 <li><a href="#">About</a></li>
                             </ul>
                         </li>

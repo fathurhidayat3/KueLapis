@@ -15,7 +15,7 @@ class PaletteController extends Controller
     public function index()
     {
         //
-        return view('welcome');
+        return Palette::all();
     }
 
     public function getpalettes()
@@ -51,9 +51,10 @@ class PaletteController extends Controller
      * @param  \App\Palette  $palette
      * @return \Illuminate\Http\Response
      */
-    public function show(Palette $palette)
+    public function show(Palette $getpalette)
     {
         //
+        return $getpalette;
     }
 
     /**

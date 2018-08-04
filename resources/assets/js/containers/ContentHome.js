@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import LoadingSpinner from '../components/LoadingSpinner';
 import CHPaletteItem from '../components/CHPaletteItem';
 import CHGradientItem from '../components/CHGradientItem';
 import CHColorItem from '../components/CHColorItem';
+
+import { panelStatus } from '../actions/AppAction';
 
 class ContentHome extends Component {
     constructor(props) {
@@ -14,7 +17,7 @@ class ContentHome extends Component {
             color: [],
             palette: [],
             gradient: [],
-            loading: false,
+            loading: false
         }
     }
 
@@ -34,6 +37,9 @@ class ContentHome extends Component {
             .catch(function (error) {
                 console.log(error);
             })
+    }
+    componentDidMount() {
+        this.props.panelStatus();
     }
 
     render() {
@@ -80,4 +86,14 @@ class ContentHome extends Component {
     }
 }
 
-export default ContentHome;
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  panelStatus: () => {dispatch(panelStatus(0))}
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContentHome);

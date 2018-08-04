@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import CHPanel from '../components/CHPanel';
 import ColorCode from '../components/ColorCode';
 
+import { panelStatus } from '../actions/AppAction';
+
 class DetailPalette extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selected: {}
+    }
   }
 
   componentWillMount() {
-    console.log(this.props.palette);
+    let id = this.props.location.pathname.split('/')[2];
+    axios.get('http://localhost:8000/getpalettes/' + id)
+      .then(response => {
+        this.setState({
+          selected: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
   render() {
-    const selected = this.props.palette.selected;
+    const selected = this.state.selected;
 
     return (
       <CHPanel title="Selected Palette" linkto="">
@@ -47,10 +61,10 @@ class DetailPalette extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  palette: state.PaletteReducer
 })
 
 const mapDispatchToProps = (dispatch) => ({
+  panelStatus: dispatch(panelStatus(2))
 })
 
 export default connect(
