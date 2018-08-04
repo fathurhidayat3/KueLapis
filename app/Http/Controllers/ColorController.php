@@ -16,13 +16,7 @@ class ColorController extends Controller
     public function index()
     {
         //
-        return view('welcome');
-    }
-
-    public function getcolors()
-    {
-        //
-        return Color::all();
+        return Color::paginate(24);
     }
 
     /**

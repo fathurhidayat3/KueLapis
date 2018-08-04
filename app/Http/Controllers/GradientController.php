@@ -15,13 +15,7 @@ class GradientController extends Controller
     public function index()
     {
         //
-        return Gradient::all();
-    }
-
-    public function getgradients()
-    {
-        //
-        return Gradient::all();
+        return Gradient::paginate(24);
     }
 
     /**

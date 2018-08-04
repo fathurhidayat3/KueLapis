@@ -7,14 +7,14 @@
 
         <title>KueLapis</title>
 
-        <!-- Fonts -->
+        <meta name="description" content="your UI design eye candy.">
+        <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"> -->
+
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('third-party/font-awesome/css/font-awesome.min.css')}}">
     </head>
     <body>
-        
         <div id="app"></div>
-        
         <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>

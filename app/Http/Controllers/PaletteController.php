@@ -15,13 +15,7 @@ class PaletteController extends Controller
     public function index()
     {
         //
-        return Palette::all();
-    }
-
-    public function getpalettes()
-    {
-        //
-        return Palette::all();
+        return Palette::paginate(24);
     }
 
     /**

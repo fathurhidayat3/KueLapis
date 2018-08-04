@@ -20,11 +20,17 @@ class CHPanel extends Component {
             case 0:
                 return <Link to={this.props.linkto}>See More</Link>;
             case 1:
-                // return <a data-toggle="modal" href='#modal-filter'><i className="fa fa-filter"></i></a>;
-                return null;
+                return <div>
+                    <Link to="/"><i className="fa fa-plus"></i></Link>&emsp;
+                    <a data-toggle="modal" href='#modal-filter'><i className="fa fa-filter"></i></a>
+                </div>;
+            // return null;
             case 2:
-                // return <a><i className="fa fa-pencil"></i></a>;
-                return null;
+                return <div>
+                    <a><i className="fa fa-caret-left fa-lg"></i></a>&ensp;
+                    <a><i className="fa fa-caret-right fa-lg"></i></a>
+                </div>;
+            // return null;
             default:
                 return <Link to={this.props.linkto}>See More</Link>;
         }
